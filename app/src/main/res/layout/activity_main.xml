@@ -6,13 +6,59 @@
     android:layout_height="match_parent"
     tools:context="com.example.liam.tamagotchiwaifu.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
+    <LinearLayout
+        android:id="@+id/lotHealth"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:gravity="right"
+        android:orientation="horizontal"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/lotLove">
 
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lotHappy"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:gravity="left"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lotFood">
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lotFood"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:gravity="left"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lotLove">
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lotLove"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:showDividers="middle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lotConfidence"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:gravity="right"
+        android:orientation="horizontal"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lotHealth">
+
+    </LinearLayout>
 </android.support.constraint.ConstraintLayout>
