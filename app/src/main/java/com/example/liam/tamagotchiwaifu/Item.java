@@ -16,7 +16,7 @@ public class Item
 
     public Item(String _name)
     {
-        name = name;
+        name = _name;
         properties = new ArrayList<>();
         effects = new ArrayList<>();
         effectAmounts = new ArrayList<>();
@@ -33,9 +33,9 @@ public class Item
         properties.add(p);
     }
 
-    public Boolean hasProperty(Property p)
+    public ArrayList<Property> getProperties()
     {
-        return properties.contains(p);
+        return properties;
     }
 
     public Float getEffect(Stat stat)
@@ -50,4 +50,8 @@ public class Item
         }
     }
 
+    public String getName()
+    {
+        return name;
+    }
 }

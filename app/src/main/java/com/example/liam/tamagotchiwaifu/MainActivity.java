@@ -1,7 +1,9 @@
 package com.example.liam.tamagotchiwaifu;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.GridView;
@@ -138,6 +140,16 @@ public class MainActivity extends AppCompatActivity
             vw.setLayoutParams(params);
             lotHappy.addView(vw, i);
         }
+    }
+
+    public void btnItems_onClick(View v)
+    {
+        startActivity(new Intent(MainActivity.this, PlayerMenuActivity.class));
+    }
+
+    public void btnStore_onClick(View v)
+    {
+        startActivity(new Intent(MainActivity.this, StoreMenuActivity.class));
     }
 
 }
