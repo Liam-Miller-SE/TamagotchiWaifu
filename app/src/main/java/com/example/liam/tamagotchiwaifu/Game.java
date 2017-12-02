@@ -45,4 +45,9 @@ public class Game
     {
         return pet.getHealth();
     }
+
+    public void useItem(Item i)
+    {
+        pet.useItem(i);
+    }
 }

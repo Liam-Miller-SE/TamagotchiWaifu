@@ -54,4 +54,12 @@ public class Pet
     {
         return health;
     }
+
+    public void useItem(Item i)
+    {
+        health += i.getEffect(Stat.HEALTH);
+        happiness += i.getEffect(Stat.HAPPINESS);
+        food += i.getEffect(Stat.HUNGER);
+        confidence += i.getEffect(Stat.CONFIDENCE);
+    }
 }
