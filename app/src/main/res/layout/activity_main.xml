@@ -6,6 +6,25 @@
     android:layout_height="match_parent"
     tools:context="com.example.liam.tamagotchiwaifu.MainActivity">
 
+    <Button
+        android:id="@+id/btnTalk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="40dp"
+        android:text="Talk"
+        app:layout_constraintBottom_toBottomOf="@+id/btnItems"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <Button
+        android:id="@+id/btnItems"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="40dp"
+        android:text="Items"
+        app:layout_constraintBottom_toTopOf="@+id/btnStore"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
     <LinearLayout
         android:id="@+id/lotHealth"
         android:layout_width="150dp"
@@ -61,4 +80,14 @@
         app:layout_constraintTop_toBottomOf="@+id/lotHealth">
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btnStore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:layout_marginLeft="40dp"
+        android:text="Store"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
 </android.support.constraint.ConstraintLayout>
