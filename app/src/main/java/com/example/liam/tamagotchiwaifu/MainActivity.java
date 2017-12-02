@@ -15,19 +15,37 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity
 {
-
+    private Game game;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
+        game = Game.getInstance();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        UpdateStats();
+    }
+
+    private void UpdateStats()
+    {
         LinearLayout lotLove = findViewById(R.id.lotLove);
+        lotLove.removeAllViews();
         ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(100, 100);
         //initialize hearts
         for(int i = 0; i < 6; i++)
         {
             ImageView vw = new ImageView(getApplicationContext());
-            vw.setImageResource(R.mipmap.love_empty);
+            if(game.getLove() > i + 1)
+            {
+                vw.setImageResource(R.mipmap.love_full);
+            }
+            else if(game.getLove() + 0.5 > i + 1)
+            {
+                vw.setImageResource(R.mipmap.love_half);
+            }
+            else
+            {
+                vw.setImageResource(R.mipmap.love_empty);
+            }
             vw.setLayoutParams(params);
             lotLove.addView(vw, i);
         }
@@ -35,42 +53,91 @@ public class MainActivity extends AppCompatActivity
 
         //initialize food
         LinearLayout lotFood = findViewById(R.id.lotFood);
+        lotFood.removeAllViews();
         for(int i = 0; i < 6; i++)
         {
             ImageView vw = new ImageView(getApplicationContext());
-            vw.setImageResource(R.mipmap.hunger_empty);
+            if(game.getFood() > i + 1)
+            {
+                vw.setImageResource(R.mipmap.hunger_full);
+            }
+            else if(game.getFood() + 0.5 > i + 1)
+            {
+                vw.setImageResource(R.mipmap.hunger_half);
+            }
+            else
+            {
+                vw.setImageResource(R.mipmap.hunger_empty);
+            }
             vw.setLayoutParams(params);
             lotFood.addView(vw, i);
         }
 
         //initialize confidence
         LinearLayout lotConfidence = findViewById(R.id.lotConfidence);
+        lotConfidence.removeAllViews();
         for(int i = 0; i < 6; i++)
         {
             ImageView vw = new ImageView(getApplicationContext());
-            vw.setImageResource(R.mipmap.confident_empty);
+            if(game.getConfidence() > i + 1)
+            {
+                vw.setImageResource(R.mipmap.confident_full);
+            }
+            else if(game.getConfidence() + 0.5 > i + 1)
+            {
+                vw.setImageResource(R.mipmap.confident_half);
+            }
+            else
+            {
+                vw.setImageResource(R.mipmap.confident_empty);
+            }
             vw.setLayoutParams(params);
             lotConfidence.addView(vw, i);
         }
 
         //initialize Health
         LinearLayout lotHealth = findViewById(R.id.lotHealth);
+        lotHealth.removeAllViews();
         for(int i = 0; i < 6; i++)
         {
             ImageView vw = new ImageView(getApplicationContext());
-            vw.setImageResource(R.mipmap.health_empty);
+            if(game.getHealth() > i + 1)
+            {
+                vw.setImageResource(R.mipmap.health_full);
+            }
+            else if(game.getHealth() + 0.5 > i + 1)
+            {
+                vw.setImageResource(R.mipmap.health_half);
+            }
+            else
+            {
+                vw.setImageResource(R.mipmap.health_empty);
+            }
             vw.setLayoutParams(params);
             lotHealth.addView(vw, i);
         }
 
         //initialize Happiness
         LinearLayout lotHappy = findViewById(R.id.lotHappy);
+        lotHappy.removeAllViews();
         for(int i = 0; i < 6; i++)
         {
             ImageView vw = new ImageView(getApplicationContext());
-            vw.setImageResource(R.mipmap.happy_empty);
+            if(game.getHappiness() > i + 1)
+            {
+                vw.setImageResource(R.mipmap.happy_full);
+            }
+            else if(game.getHappiness() + 0.5 > i + 1)
+            {
+                vw.setImageResource(R.mipmap.happy_half);
+            }
+            else
+            {
+                vw.setImageResource(R.mipmap.happy_empty);
+            }
             vw.setLayoutParams(params);
             lotHappy.addView(vw, i);
         }
     }
+
 }
