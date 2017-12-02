@@ -9,6 +9,7 @@ package com.example.liam.tamagotchiwaifu;
 public class Game
 {
     private static final Game ourInstance = new Game();
+    private Pet pet;
 
     public static Game getInstance()
     {
@@ -17,35 +18,31 @@ public class Game
 
     private Game()
     {
+        pet = new Pet("TEST");
     }
 
-    //TODO: implement
     public float getLove()
     {
-        return 0;
+        return pet.getLove();
     }
 
-    //TODO: implement
     public float getFood()
     {
-        return 3.6f;
+        return pet.getFood();
     }
 
-    //TODO: implement
     public float getHappiness()
     {
-        return 0;
+        return pet.getHappiness();
     }
 
-    //TODO: implement
     public float getConfidence()
     {
-        return 0;
+        return pet.getConfidence();
     }
 
-    //TODO: implement
     public float getHealth()
     {
-        return 0;
+        return pet.getHealth();
     }
 }
