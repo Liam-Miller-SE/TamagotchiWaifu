@@ -13,10 +13,21 @@ public class Item
     ArrayList<Property> properties;
     ArrayList<Stat> effects;
     ArrayList<Float> effectAmounts;
+    int resourceID;
 
     public Item(String _name)
     {
         name = _name;
+        resourceID = R.mipmap.missing_texture;
+        properties = new ArrayList<>();
+        effects = new ArrayList<>();
+        effectAmounts = new ArrayList<>();
+    }
+
+    public Item(String _name, int id)
+    {
+        name = _name;
+        resourceID = id;
         properties = new ArrayList<>();
         effects = new ArrayList<>();
         effectAmounts = new ArrayList<>();

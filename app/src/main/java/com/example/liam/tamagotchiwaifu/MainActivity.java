@@ -1,6 +1,7 @@
 package com.example.liam.tamagotchiwaifu;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -24,6 +25,17 @@ public class MainActivity extends AppCompatActivity
         game = Game.getInstance();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        ImageView hair = (ImageView) findViewById(R.id.petHair);
+        Drawable imghair = getResources().getDrawable(R.mipmap.nikki_hair1);
+        imghair.setFilterBitmap(false);
+        hair.setImageDrawable(imghair);
+
+        ImageView face = (ImageView) findViewById(R.id.petFace);
+        Drawable imgface = getResources().getDrawable(R.mipmap.nikki_idle);
+        imgface.setFilterBitmap(false);
+        face.setImageDrawable(imgface);
+
         UpdateStats();
     }
 
