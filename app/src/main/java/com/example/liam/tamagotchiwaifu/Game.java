@@ -40,10 +40,14 @@ public class Game
         i.addProperty(Property.SWEET);
         player.addItem(i);
         storeInventory.add(i);
-
-        Item i2 = new Item("Apple");
-
         storePrices.add(100);
+
+        Item i2 = new Item("Apple", R.drawable.apple);
+        i2.addEffect(Stat.HUNGER, 1.5f);
+        i2.addEffect(Stat.HEALTH, 2f);
+        i2.addProperty(Property.RED);
+        storeInventory.add(i2);
+        storePrices.add(50);
     }
 
     public float getLove()
