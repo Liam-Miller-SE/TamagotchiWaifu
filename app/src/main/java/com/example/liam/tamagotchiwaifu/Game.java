@@ -26,21 +26,23 @@ public class Game
     {
         pet = new Pet("Nikki-chan");
         player = new Player("ANON");
-        Item i = new Item("Candy Sticks");
         storeInventory = new ArrayList<>();
         storePrices = new ArrayList<>();
         pet.addLike(Property.SWEET);
         pet.addLike(Property.PINK);
 
 
+        Item i = new Item("Candy Sticks", R.drawable.candy_stix);
         i.addEffect(Stat.HUNGER, 2f);
         i.addEffect(Stat.HAPPINESS, 1f);
         i.addEffect(Stat.HEALTH, -0.5f);
         i.addProperty(Property.PINK);
         i.addProperty(Property.SWEET);
         player.addItem(i);
-
         storeInventory.add(i);
+
+        Item i2 = new Item("Apple");
+
         storePrices.add(100);
     }
 

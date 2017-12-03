@@ -65,4 +65,9 @@ public class Item
     {
         return name;
     }
+
+    public int getResourseID()
+    {
+        return resourceID;
+    }
 }

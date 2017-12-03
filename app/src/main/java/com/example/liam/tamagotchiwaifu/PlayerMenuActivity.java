@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import java.util.ArrayList;
@@ -39,7 +40,13 @@ public class PlayerMenuActivity extends AppCompatActivity
                     startActivity(new Intent(PlayerMenuActivity.this, MainActivity.class));
                 }
             });
-            lotInventory.addView(btn);
+            LinearLayout ll = new LinearLayout(getApplicationContext());
+            ll.setOrientation(LinearLayout.HORIZONTAL);
+            ll.addView(btn);
+            ImageView iv = new ImageView(getApplicationContext());
+            iv.setImageResource(i.getResourseID());
+            ll.addView(iv);
+            lotInventory.addView(ll);
         }
     }
 

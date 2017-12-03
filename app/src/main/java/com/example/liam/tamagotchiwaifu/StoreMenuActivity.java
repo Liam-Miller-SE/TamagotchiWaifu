@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import java.util.ArrayList;
@@ -44,7 +45,13 @@ public class StoreMenuActivity extends AppCompatActivity
                     RefreshYen();
                 }
             });
-            lotStore.addView(btn);
+            LinearLayout ll = new LinearLayout(getApplicationContext());
+            ll.setOrientation(LinearLayout.HORIZONTAL);
+            ImageView iv = new ImageView(getApplicationContext());
+            iv.setImageResource(i.getResourseID());
+            ll.addView(iv);
+            ll.addView(btn);
+            lotStore.addView(ll);
         }
     }
 
