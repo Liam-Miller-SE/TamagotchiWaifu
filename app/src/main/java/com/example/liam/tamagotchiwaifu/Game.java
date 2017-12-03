@@ -24,11 +24,14 @@ public class Game
 
     private Game()
     {
-        pet = new Pet("TEST");
+        pet = new Pet("Nikki-chan");
         player = new Player("ANON");
         Item i = new Item("Candy Sticks");
         storeInventory = new ArrayList<>();
         storePrices = new ArrayList<>();
+        pet.addLike(Property.SWEET);
+        pet.addLike(Property.PINK);
+
 
         i.addEffect(Stat.HUNGER, 2f);
         i.addEffect(Stat.HAPPINESS, 1f);

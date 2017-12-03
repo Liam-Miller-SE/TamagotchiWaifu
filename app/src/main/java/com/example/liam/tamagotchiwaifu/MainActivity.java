@@ -26,17 +26,30 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        UpdateStats();
+        UpdateExpression();
+    }
+
+    private void UpdateExpression()
+    {
         ImageView hair = (ImageView) findViewById(R.id.petHair);
-        Drawable imghair = getResources().getDrawable(R.mipmap.nikki_hair1);
+        Drawable imghair = getResources().getDrawable(R.drawable.nikki_hair1);
         imghair.setFilterBitmap(false);
         hair.setImageDrawable(imghair);
 
         ImageView face = (ImageView) findViewById(R.id.petFace);
-        Drawable imgface = getResources().getDrawable(R.mipmap.nikki_idle);
-        imgface.setFilterBitmap(false);
-        face.setImageDrawable(imgface);
-
-        UpdateStats();
+        if(game.getLove() <= 2)
+        {
+            Drawable imgface = getResources().getDrawable(R.drawable.nikki_sad);
+            imgface.setFilterBitmap(false);
+            face.setImageDrawable(imgface);
+        }
+        else
+        {
+            Drawable imgface = getResources().getDrawable(R.drawable.nikki_idle);
+            imgface.setFilterBitmap(false);
+            face.setImageDrawable(imgface);
+        }
     }
 
     private void UpdateStats()

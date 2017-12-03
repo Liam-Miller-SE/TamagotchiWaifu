@@ -61,5 +61,21 @@ public class Pet
         happiness += i.getEffect(Stat.HAPPINESS);
         food += i.getEffect(Stat.HUNGER);
         confidence += i.getEffect(Stat.CONFIDENCE);
+        for (Property p : i.getProperties())
+        {
+            if(likes.contains(p))
+            {
+                love++;
+            }
+            if(dislikes.contains(p))
+            {
+                love--;
+            }
+        }
+    }
+
+    public void addLike(Property p)
+    {
+        likes.add(p);
     }
 }
